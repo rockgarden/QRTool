@@ -5,13 +5,15 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fast ScanVC-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FastScanVC" id="BYZ-38-t0r" customClass="FastScanVC" customModule="QRTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="MainVC" customModule="QRTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,6 +31,12 @@
                                             <action selector="scanAction:" destination="BYZ-38-t0r" id="bIG-hw-JNS"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ltS-YG-pvG"/>
+                                    <barButtonItem title="Make" id="scm-ma-Zed">
+                                        <connections>
+                                            <segue destination="JgD-cC-jUV" kind="show" id="AlO-1u-l2Z"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -37,6 +45,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Make QR-->
+        <scene sceneID="doa-WZ-TMG">
+            <objects>
+                <viewController storyboardIdentifier="MakerVC" title="Make QR" id="JgD-cC-jUV" customClass="MakerVC" customModule="QRTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2I9-a6-k4g"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9e-aF-LiZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mzy-Q2-xTV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入要生成二维码的文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S5E-3i-aOJ">
+                                <rect key="frame" x="72" y="50" width="232" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLL-bJ-NTf">
+                                <rect key="frame" x="172" y="100" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QLL-bJ-NTf" secondAttribute="height" multiplier="1:1" id="Jl3-ve-gXQ"/>
+                                    <constraint firstAttribute="width" constant="60" id="LGX-3g-h6k"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择logo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oju-n4-1Pe">
+                                <rect key="frame" x="72" y="100" width="70" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp0-1L-Eb3">
+                                <rect key="frame" x="72" y="190" width="40" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-aa-HSU">
+                                <rect key="frame" x="72" y="216" width="232" height="232"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.78823529410000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9bB-aa-HSU" secondAttribute="height" id="2BV-hC-p6J"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="624-5h-9Xv">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="guq-5O-7SF">
+                                        <connections>
+                                            <action selector="dismissVC:" destination="JgD-cC-jUV" id="3DL-ep-94D"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pvs-cZ-tQp"/>
+                                    <barButtonItem title="Make" id="3YA-ID-jc6">
+                                        <connections>
+                                            <action selector="generateItemClick" destination="JgD-cC-jUV" id="eKR-ss-9ka"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S5E-3i-aOJ" firstAttribute="top" secondItem="2I9-a6-k4g" secondAttribute="bottom" constant="30" id="0bw-0K-zLn"/>
+                            <constraint firstItem="9bB-aa-HSU" firstAttribute="top" secondItem="Rp0-1L-Eb3" secondAttribute="bottom" constant="10" id="6Nq-GA-GMs"/>
+                            <constraint firstItem="QLL-bJ-NTf" firstAttribute="leading" secondItem="oju-n4-1Pe" secondAttribute="trailing" constant="30" id="7rW-91-ci7"/>
+                            <constraint firstItem="9bB-aa-HSU" firstAttribute="centerX" secondItem="Mzy-Q2-xTV" secondAttribute="centerX" id="AeJ-qv-DbU"/>
+                            <constraint firstItem="Rp0-1L-Eb3" firstAttribute="leading" secondItem="oju-n4-1Pe" secondAttribute="leading" id="Lh4-p1-9Fq"/>
+                            <constraint firstItem="Rp0-1L-Eb3" firstAttribute="top" secondItem="QLL-bJ-NTf" secondAttribute="bottom" constant="30" id="Tjv-l6-L5n"/>
+                            <constraint firstItem="oju-n4-1Pe" firstAttribute="leading" secondItem="S5E-3i-aOJ" secondAttribute="leading" id="Ygg-nh-xR9"/>
+                            <constraint firstItem="S5E-3i-aOJ" firstAttribute="centerX" secondItem="Mzy-Q2-xTV" secondAttribute="centerX" id="f2z-h6-828"/>
+                            <constraint firstItem="QLL-bJ-NTf" firstAttribute="top" secondItem="oju-n4-1Pe" secondAttribute="top" id="hrM-Un-1c5"/>
+                            <constraint firstItem="9bB-aa-HSU" firstAttribute="width" secondItem="Mzy-Q2-xTV" secondAttribute="width" multiplier="0.618" id="mVj-jT-Dq4"/>
+                            <constraint firstItem="oju-n4-1Pe" firstAttribute="top" secondItem="S5E-3i-aOJ" secondAttribute="bottom" constant="20" id="n1h-bA-4pJ"/>
+                            <constraint firstItem="S5E-3i-aOJ" firstAttribute="width" secondItem="Mzy-Q2-xTV" secondAttribute="width" multiplier="0.618" id="vXy-KC-KlH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="QRCodeImageView" destination="9bB-aa-HSU" id="Gg9-CW-5cD"/>
+                        <outlet property="contentLab" destination="S5E-3i-aOJ" id="n04-ei-7hK"/>
+                        <outlet property="logoImageView" destination="QLL-bJ-NTf" id="rjD-He-1Dw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peS-EH-4ra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="36"/>
         </scene>
     </scenes>
 </document>

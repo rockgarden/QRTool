@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class FastScanVC: UIViewController, QRCodeReaderViewControllerDelegate {
+class MainVC: UIViewController {
     var autoStartScan = true
     lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
         $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
@@ -49,7 +49,10 @@ class FastScanVC: UIViewController, QRCodeReaderViewControllerDelegate {
         autoStartScan = false
     }
     
-    // MARK: - QRCodeReader Delegate Methods
+}
+
+// MARK: - QRCodeReader Delegate Methods
+extension MainVC: QRCodeReaderViewControllerDelegate {
     
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()

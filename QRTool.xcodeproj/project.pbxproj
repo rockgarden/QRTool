@@ -21,8 +21,11 @@
 		C2D48F1E1DFFB7BA008D4F90 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F141DFFB7BA008D4F90 /* SwitchCameraButton.swift */; };
 		C2D48F1F1DFFB7BA008D4F90 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F151DFFB7BA008D4F90 /* ToggleTorchButton.swift */; };
 		C2D48F291DFFB882008D4F90 /* QRMoudle.h in Headers */ = {isa = PBXBuildFile; fileRef = C2D48F271DFFB882008D4F90 /* QRMoudle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2D48F2F1DFFB8EF008D4F90 /* FastScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F2E1DFFB8EF008D4F90 /* FastScanVC.swift */; };
+		C2D48F2F1DFFB8EF008D4F90 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F2E1DFFB8EF008D4F90 /* MainVC.swift */; };
 		C2D48F3A1DFFBC0C008D4F90 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F3C1DFFBC0C008D4F90 /* LaunchScreen.xib */; };
+		C2D48F471DFFD06B008D4F90 /* QRCodeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F461DFFD06B008D4F90 /* QRCodeMaker.swift */; };
+		C2D48F491DFFD416008D4F90 /* MakerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F481DFFD416008D4F90 /* MakerVC.swift */; };
+		C2D48F4B1DFFD4F7008D4F90 /* AppFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +47,13 @@
 		C2D48F251DFFB882008D4F90 /* QRMoudle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QRMoudle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D48F271DFFB882008D4F90 /* QRMoudle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRMoudle.h; sourceTree = "<group>"; };
 		C2D48F281DFFB882008D4F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2D48F2E1DFFB8EF008D4F90 /* FastScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastScanVC.swift; sourceTree = "<group>"; };
+		C2D48F2E1DFFB8EF008D4F90 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C2D48F3B1DFFBC0C008D4F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C2D48F3D1DFFBC26008D4F90 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C2D48F3E1DFFBC26008D4F90 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C2D48F461DFFD06B008D4F90 /* QRCodeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMaker.swift; sourceTree = "<group>"; };
+		C2D48F481DFFD416008D4F90 /* MakerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerVC.swift; sourceTree = "<group>"; };
+		C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 				C2D48F2D1DFFB8EF008D4F90 /* UI */,
 				C2D48F0B1DFFB7BA008D4F90 /* Sources */,
 				C2D48EE41DFFB734008D4F90 /* AppDelegate.swift */,
+				C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */,
 				C2D48EE81DFFB735008D4F90 /* Main.storyboard */,
 				C2D48EEB1DFFB735008D4F90 /* Assets.xcassets */,
 				C2D48F3C1DFFBC0C008D4F90 /* LaunchScreen.xib */,
@@ -104,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				C2D48F0C1DFFB7BA008D4F90 /* QRCodeReader.swift */,
+				C2D48F461DFFD06B008D4F90 /* QRCodeMaker.swift */,
 				C2D48F0D1DFFB7BA008D4F90 /* QRCodeReaderResult.swift */,
 				C2D48F0E1DFFB7BA008D4F90 /* QRCodeReaderView.swift */,
 				C2D48F0F1DFFB7BA008D4F90 /* QRCodeReaderViewContainer.swift */,
@@ -129,7 +137,8 @@
 		C2D48F2D1DFFB8EF008D4F90 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C2D48F2E1DFFB8EF008D4F90 /* FastScanVC.swift */,
+				C2D48F2E1DFFB8EF008D4F90 /* MainVC.swift */,
+				C2D48F481DFFD416008D4F90 /* MakerVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -251,15 +260,18 @@
 				C2D48F1F1DFFB7BA008D4F90 /* ToggleTorchButton.swift in Sources */,
 				C2D48F1D1DFFB7BA008D4F90 /* ReaderOverlayView.swift in Sources */,
 				C2D48F1B1DFFB7BA008D4F90 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				C2D48F491DFFD416008D4F90 /* MakerVC.swift in Sources */,
 				C2D48F161DFFB7BA008D4F90 /* QRCodeReader.swift in Sources */,
 				C2D48EE51DFFB734008D4F90 /* AppDelegate.swift in Sources */,
+				C2D48F4B1DFFD4F7008D4F90 /* AppFunc.swift in Sources */,
 				C2D48F1A1DFFB7BA008D4F90 /* QRCodeReaderViewController.swift in Sources */,
-				C2D48F2F1DFFB8EF008D4F90 /* FastScanVC.swift in Sources */,
+				C2D48F2F1DFFB8EF008D4F90 /* MainVC.swift in Sources */,
 				C2D48F171DFFB7BA008D4F90 /* QRCodeReaderResult.swift in Sources */,
 				C2D48F181DFFB7BA008D4F90 /* QRCodeReaderView.swift in Sources */,
 				C2D48F1C1DFFB7BA008D4F90 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				C2D48F1E1DFFB7BA008D4F90 /* SwitchCameraButton.swift in Sources */,
 				C2D48F191DFFB7BA008D4F90 /* QRCodeReaderViewContainer.swift in Sources */,
+				C2D48F471DFFD06B008D4F90 /* QRCodeMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +494,7 @@
 				C2D48EF51DFFB735008D4F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2D48F2A1DFFB882008D4F90 /* Build configuration list for PBXNativeTarget "QRMoudle" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				C2D48F2C1DFFB882008D4F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
