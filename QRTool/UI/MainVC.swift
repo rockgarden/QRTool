@@ -10,10 +10,12 @@ import UIKit
 import AVFoundation
 
 class MainVC: UIViewController {
+    
     var autoStartScan = true
     lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
         $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
         $0.showTorchButton = true
+        $0.showSwitchCameraButton = false
     })
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,13 +41,13 @@ class MainVC: UIViewController {
             }
             
             present(reader, animated: true, completion: nil)
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             
             present(alert, animated: true, completion: nil)
         }
+        
         autoStartScan = false
     }
     

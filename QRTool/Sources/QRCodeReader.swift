@@ -29,6 +29,7 @@ import AVFoundation
 
 /// Reader object base on the `AVCaptureDevice` to read / scan 1D and 2D codes.
 public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegate {
+  /// 设置捕捉设备
   var defaultDevice: AVCaptureDevice = .defaultDevice(withMediaType: AVMediaTypeVideo)
   var frontDevice: AVCaptureDevice?  = {
     if #available(iOS 10, *) {
@@ -41,10 +42,10 @@ public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegat
         }
       }
     }
-
     return nil
   }()
-
+    
+  /// 设置设备输入
   lazy var defaultDeviceInput: AVCaptureDeviceInput? = {
     return try? AVCaptureDeviceInput(device: self.defaultDevice)
   }()
@@ -53,22 +54,29 @@ public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegat
     if let _frontDevice = self.frontDevice {
       return try? AVCaptureDeviceInput(device: _frontDevice)
     }
-
     return nil
   }()
-
+    
+  /// 设置设备输出
   var metadataOutput = AVCaptureMetadataOutput()
   var session        = AVCaptureSession()
 
   // MARK: - Managing the Properties
 
-  /// CALayer that you use to display video as it is being captured by an input device.
+  /// CALayer that you use to display video as it is being captured by an input device. 预览图层
   public lazy var previewLayer: AVCaptureVideoPreviewLayer = {
     return AVCaptureVideoPreviewLayer(session: self.session)
   }()
 
-  /// An array of strings identifying the types of metadata objects to process.
+  /// An array of strings identifying the types of metadata objects to process. 设置扫描类型(二维码和条形码)
   public let metadataObjectTypes: [String]
+//    [AVMetadataObjectTypeQRCode,
+//    AVMetadataObjectTypeCode39Code,
+//    AVMetadataObjectTypeCode128Code,
+//    AVMetadataObjectTypeCode39Mod43Code,
+//    AVMetadataObjectTypeEAN13Code,
+//    AVMetadataObjectTypeEAN8Code,
+//    AVMetadataObjectTypeCode93Code]
 
   // MARK: - Managing the Code Discovery
 
@@ -309,6 +317,7 @@ public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegat
     guard let deviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return false }
 
     let output  = AVCaptureMetadataOutput()
+    /// 设置会话
     let session = AVCaptureSession()
 
     session.addInput(deviceInput)

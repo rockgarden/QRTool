@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  QRTool
+
+  Created by wangkan on 2016/12/14.
+  Copyright © 2016年 rockgarden. All rights reserved.
+*/
+"CFBundleDisplayName" = "二维码工具";
+"NSCameraUsageDescription" = "需要访问您的相机来扫描识别二维码.";
+"NSPhotoLibraryUsageDescription" = "需要访问您的照片用来生成您的标识.";

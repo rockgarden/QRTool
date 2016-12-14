@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  QRTool
+
+  Created by wangkan on 2016/12/14.
+  Copyright © 2016年 rockgarden. All rights reserved.
+*/
+"CFBundleDisplayName" = "QR Scan";
+"NSCameraUsageDescription" = "The App needs camera to scan QR codes.";
+"NSPhotoLibraryUsageDescription" = "The App needs Photo Library to make your logo.";

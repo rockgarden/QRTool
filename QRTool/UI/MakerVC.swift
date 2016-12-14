@@ -34,7 +34,7 @@ class MakerVC: UIViewController {
     
     //MARK: - Interface Components
     
-    private func setupComponents() {
+    fileprivate func setupComponents() {
         let chooseLogoGes = UITapGestureRecognizer(target: self, action: #selector(chooseLogo))
         logoImageView.addGestureRecognizer(chooseLogoGes)
     }
@@ -44,21 +44,20 @@ class MakerVC: UIViewController {
     @IBAction fileprivate func generateItemClick() {
         view.endEditing(true)
         
-        guard let  content = contentLab.text else {
-            AppFunc.confirm(title: "温馨提示", message: "请输入内容", controller: self)
+        guard let content = contentLab.text else {
+            AppFunc.confirm(title: "confirmTitle", message: "confirmMessage", controller: self)
             return
         }
         
         if content.characters.count > 0 {
             DispatchQueue.global().async {
-                
                 let image = content.generateQRCodeWithLogo(logo: self.logoImageView.image)
                 DispatchQueue.main.async(execute: {
                     self.QRCodeImageView.image = image
                 })
             }
         } else {
-            AppFunc.confirm(title: "温馨提示", message: "请输入内容", controller: self)
+            AppFunc.confirm(title: "confirmTitle", message: "confirmMessage", controller: self)
         }
         
     }

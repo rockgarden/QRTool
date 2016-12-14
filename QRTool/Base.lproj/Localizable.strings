@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  QRTool
+
+  Created by wangkan on 2016/12/14.
+  Copyright © 2016年 rockgarden. All rights reserved.
+*/
+
+/* confirm! */
+"confirmTitle" = "Confirm Tip";
+"confirmMessage" = "Please input something!";
+
+/* OK */
+"Accept" = "OK";

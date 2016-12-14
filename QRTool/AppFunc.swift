@@ -9,20 +9,14 @@
 import UIKit
 import AudioToolbox
 
-struct PhotoSource:OptionSet
-{
+struct PhotoSource: OptionSet {
     let rawValue:Int
-    
     static let camera = PhotoSource(rawValue: 1)
     static let photoLibrary = PhotoSource(rawValue: 1<<1)
-    
 }
 
-
-func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool
-{
-    switch (lhs, rhs)
-    {
+func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
     case let (l?, r?):
         return l < r
     case (nil, _?):
@@ -32,10 +26,8 @@ func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool
     }
 }
 
-func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool
-{
-    switch (lhs, rhs)
-    {
+func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
     case let (l?, r?):
         return l > r
     default:
@@ -113,15 +105,13 @@ class AppFunc: NSObject {
         controller.present(photo, animated: true, completion: nil)
     }
     
-    /// 确认弹出框
-    class func confirm(title:String?,message:String?,controller:UIViewController,handler: ( (UIAlertAction) -> Swift.Void)? = nil) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let entureAction = UIAlertAction(title: "确定", style: .destructive, handler: handler)
+    /// 消息提示框
+    class func confirm(title:String?, message:String?, controller:UIViewController, style: UIAlertActionStyle = .destructive, handler: ((UIAlertAction) -> Swift.Void)? = nil) {
+        let alertVC = UIAlertController(title: NSLocalizedString(title!, comment:"Alert!"), message: NSLocalizedString(message!, comment:"no message!"), preferredStyle: .alert)
+        let entureAction = UIAlertAction(title: NSLocalizedString("Accept", comment:"OK!"), style: style, handler: handler)
         alertVC.addAction(entureAction)
         controller.present(alertVC, animated: true, completion: nil)
     }
-    
     
     /// 播放声音
     class func playAlertSound(sound:String) {

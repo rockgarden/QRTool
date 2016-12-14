@@ -26,14 +26,17 @@
 		C2D48F471DFFD06B008D4F90 /* QRCodeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F461DFFD06B008D4F90 /* QRCodeMaker.swift */; };
 		C2D48F491DFFD416008D4F90 /* MakerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F481DFFD416008D4F90 /* MakerVC.swift */; };
 		C2D48F4B1DFFD4F7008D4F90 /* AppFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */; };
+		C2D48F511E00EBD6008D4F90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F531E00EBD6008D4F90 /* InfoPlist.strings */; };
+		C2D48F571E00EC4C008D4F90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F591E00EC4C008D4F90 /* Localizable.strings */; };
+		C2DA138B1E011BD600C462D8 /* RecognizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA138A1E011BD600C462D8 /* RecognizeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2887A011E010EDE008D50F4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D48EE11DFFB734008D4F90 /* QRTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D48EE41DFFB734008D4F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D48EE91DFFB735008D4F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2D48EEB1DFFB735008D4F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C2D48EF01DFFB735008D4F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D48F0C1DFFB7BA008D4F90 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		C2D48F0D1DFFB7BA008D4F90 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
 		C2D48F0E1DFFB7BA008D4F90 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
@@ -54,6 +57,11 @@
 		C2D48F461DFFD06B008D4F90 /* QRCodeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMaker.swift; sourceTree = "<group>"; };
 		C2D48F481DFFD416008D4F90 /* MakerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerVC.swift; sourceTree = "<group>"; };
 		C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFunc.swift; sourceTree = "<group>"; };
+		C2D48F521E00EBD6008D4F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C2D48F541E00EBDA008D4F90 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		C2D48F581E00EC4C008D4F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C2D48F5A1E00EC4E008D4F90 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C2DA138A1E011BD600C462D8 /* RecognizeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +110,9 @@
 				C2D48EE81DFFB735008D4F90 /* Main.storyboard */,
 				C2D48EEB1DFFB735008D4F90 /* Assets.xcassets */,
 				C2D48F3C1DFFBC0C008D4F90 /* LaunchScreen.xib */,
-				C2D48EF01DFFB735008D4F90 /* Info.plist */,
+				C2887A011E010EDE008D50F4 /* Info.plist */,
+				C2D48F531E00EBD6008D4F90 /* InfoPlist.strings */,
+				C2D48F591E00EC4C008D4F90 /* Localizable.strings */,
 			);
 			path = QRTool;
 			sourceTree = "<group>";
@@ -139,6 +149,7 @@
 			children = (
 				C2D48F2E1DFFB8EF008D4F90 /* MainVC.swift */,
 				C2D48F481DFFD416008D4F90 /* MakerVC.swift */,
+				C2DA138A1E011BD600C462D8 /* RecognizeVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C2D48ED81DFFB734008D4F90;
 			productRefGroup = C2D48EE21DFFB734008D4F90 /* Products */;
@@ -237,7 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D48F571E00EC4C008D4F90 /* Localizable.strings in Resources */,
 				C2D48EEC1DFFB735008D4F90 /* Assets.xcassets in Resources */,
+				C2D48F511E00EBD6008D4F90 /* InfoPlist.strings in Resources */,
 				C2D48F3A1DFFBC0C008D4F90 /* LaunchScreen.xib in Resources */,
 				C2D48EEA1DFFB735008D4F90 /* Main.storyboard in Resources */,
 			);
@@ -268,6 +282,7 @@
 				C2D48F2F1DFFB8EF008D4F90 /* MainVC.swift in Sources */,
 				C2D48F171DFFB7BA008D4F90 /* QRCodeReaderResult.swift in Sources */,
 				C2D48F181DFFB7BA008D4F90 /* QRCodeReaderView.swift in Sources */,
+				C2DA138B1E011BD600C462D8 /* RecognizeVC.swift in Sources */,
 				C2D48F1C1DFFB7BA008D4F90 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				C2D48F1E1DFFB7BA008D4F90 /* SwitchCameraButton.swift in Sources */,
 				C2D48F191DFFB7BA008D4F90 /* QRCodeReaderViewContainer.swift in Sources */,
@@ -301,6 +316,24 @@
 				C2D48F3E1DFFBC26008D4F90 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		C2D48F531E00EBD6008D4F90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2D48F521E00EBD6008D4F90 /* Base */,
+				C2D48F541E00EBDA008D4F90 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C2D48F591E00EC4C008D4F90 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2D48F581E00EC4C008D4F90 /* Base */,
+				C2D48F5A1E00EC4E008D4F90 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -347,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -392,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

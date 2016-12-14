@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,13 @@
                                             <action selector="scanAction:" destination="BYZ-38-t0r" id="bIG-hw-JNS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ltS-YG-pvG"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wh8-Xb-GHe"/>
+                                    <barButtonItem title="Recognize" id="Ll8-YU-LAd">
+                                        <connections>
+                                            <segue destination="wFv-sL-0Nz" kind="show" id="aU6-Bu-jgG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ahw-0i-ohP"/>
                                     <barButtonItem title="Make" id="scm-ma-Zed">
                                         <connections>
                                             <segue destination="JgD-cC-jUV" kind="show" id="AlO-1u-l2Z"/>
@@ -99,7 +106,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pvs-cZ-tQp"/>
-                                    <barButtonItem title="Make" id="3YA-ID-jc6">
+                                    <barButtonItem title="Done" id="3YA-ID-jc6">
                                         <connections>
                                             <action selector="generateItemClick" destination="JgD-cC-jUV" id="eKR-ss-9ka"/>
                                         </connections>
@@ -131,7 +138,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peS-EH-4ra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="36"/>
+            <point key="canvasLocation" x="881" y="123"/>
+        </scene>
+        <!--RecognizeVC-->
+        <scene sceneID="UtX-gJ-9hI">
+            <objects>
+                <viewController storyboardIdentifier="RecognizeVC" id="wFv-sL-0Nz" customClass="RecognizeVC" customModule="QRTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LoI-lP-M9m"/>
+                        <viewControllerLayoutGuide type="bottom" id="af2-Jw-2KO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SWr-Vl-61a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-cT-qPI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A5w-wS-jhF">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-Ua-53m">
+                                <rect key="frame" x="16" y="627" width="34" height="30"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissVC:" destination="wFv-sL-0Nz" eventType="touchUpInside" id="2z8-Kq-dgK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yTM-cT-qPI" firstAttribute="top" secondItem="LoI-lP-M9m" secondAttribute="bottom" id="Ld4-mg-ViN"/>
+                            <constraint firstAttribute="trailing" secondItem="yTM-cT-qPI" secondAttribute="trailing" id="NmF-40-Kea"/>
+                            <constraint firstItem="af2-Jw-2KO" firstAttribute="top" secondItem="yTM-cT-qPI" secondAttribute="bottom" id="XVo-Hu-qgd"/>
+                            <constraint firstItem="yTM-cT-qPI" firstAttribute="leading" secondItem="SWr-Vl-61a" secondAttribute="leading" id="hny-TO-vec"/>
+                            <constraint firstItem="kuP-Ua-53m" firstAttribute="bottom" secondItem="af2-Jw-2KO" secondAttribute="top" constant="-10" id="jfA-aa-GQd"/>
+                            <constraint firstItem="A5w-wS-jhF" firstAttribute="centerX" secondItem="SWr-Vl-61a" secondAttribute="centerX" id="qWm-Vm-hZV"/>
+                            <constraint firstItem="kuP-Ua-53m" firstAttribute="leading" secondItem="SWr-Vl-61a" secondAttribute="leadingMargin" id="qqv-Zm-wzy"/>
+                            <constraint firstItem="A5w-wS-jhF" firstAttribute="centerY" secondItem="SWr-Vl-61a" secondAttribute="centerY" id="w4x-7k-xdh"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicatoryView" destination="A5w-wS-jhF" id="YeP-gY-JEB"/>
+                        <outlet property="sourceImageView" destination="yTM-cT-qPI" id="uX8-YD-Rx7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elD-52-zin" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="816"/>
         </scene>
     </scenes>
 </document>
