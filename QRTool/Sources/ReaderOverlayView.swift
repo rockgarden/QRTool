@@ -57,7 +57,7 @@ public final class ReaderOverlayView: UIView {
     }
     
     public override func draw(_ rect: CGRect) {
-        var innerRect = rect.insetBy(dx: 50, dy: 50)
+        var innerRect = rect.insetBy(dx: 80, dy: 80)
         let minSize   = min(innerRect.width, innerRect.height)
         
         if innerRect.width != minSize {
@@ -69,7 +69,7 @@ public final class ReaderOverlayView: UIView {
             innerRect.size.height = minSize
         }
         
-        let offsetRect = innerRect.offsetBy(dx: 0, dy: 15)
+        let offsetRect = innerRect.offsetBy(dx: 0, dy: 0) //innerRect位置偏移
         
         overlay.path  = UIBezierPath(roundedRect: offsetRect, cornerRadius: 0).cgPath
     }
@@ -130,7 +130,7 @@ public final class ReaderLineView: UIView {
     }
     
     public override func draw(_ rect: CGRect) {
-        var innerRect = rect.insetBy(dx: 50, dy: 50)
+        var innerRect = rect.insetBy(dx: 100, dy: 100)
         let minSize   = min(innerRect.width, innerRect.height)
         
         if innerRect.width != minSize {
@@ -142,7 +142,7 @@ public final class ReaderLineView: UIView {
             innerRect.size.height = minSize
         }
         
-        let offsetRect = innerRect.offsetBy(dx: 0, dy: 15)
+        let offsetRect = innerRect.offsetBy(dx: 0, dy: 40)
         
         scanline.path  = UIBezierPath(roundedRect: offsetRect, cornerRadius: 5).cgPath
     }
