@@ -33,9 +33,9 @@ public final class ReaderOverlayView: UIView {
         overlay.backgroundColor = UIColor.clear.cgColor
         overlay.fillColor       = UIColor.clear.cgColor
         overlay.strokeColor     = UIColor.white.cgColor
-        overlay.lineWidth       = 3
-        overlay.lineDashPattern = [7.0, 7.0]
-        overlay.lineDashPhase   = 0
+        overlay.lineWidth       = 2
+        overlay.lineDashPattern = [5.0, 6.0] //线段分割模式:表示先绘制3个点，再跳过3个点，如此反复
+        overlay.lineDashPhase   = 0 //线条样式:表示在第一个虚线绘制的时候跳过多少个点
         
         return overlay
     }()
@@ -71,7 +71,7 @@ public final class ReaderOverlayView: UIView {
         
         let offsetRect = innerRect.offsetBy(dx: 0, dy: 15)
         
-        overlay.path  = UIBezierPath(roundedRect: offsetRect, cornerRadius: 5).cgPath
+        overlay.path  = UIBezierPath(roundedRect: offsetRect, cornerRadius: 0).cgPath
     }
 }
 
@@ -82,8 +82,8 @@ public final class ReaderLineView: UIView {
         line.backgroundColor = UIColor.clear.cgColor
         line.fillColor       = UIColor.clear.cgColor
         line.strokeColor     = UIColor.white.cgColor
-        line.lineWidth       = 3
-        line.lineDashPattern = [7.0, 7.0]
+        line.lineWidth       = 1
+        line.lineDashPattern = [2.0, 4.0]
         line.lineDashPhase   = 0
         
         return line
@@ -103,6 +103,30 @@ public final class ReaderLineView: UIView {
     
     private func setupOverlay() {
         layer.addSublayer(scanline)
+    }
+    
+    func drawLines() {
+        //1 The Graphic Context is your graphic destination. If you want to draw on a view, the view is your Graphic Context. We need to get a reference to the Graphics Context.
+        guard let ctx = UIGraphicsGetCurrentContext() else { return }
+        
+        //2 A path is a set of lines, arcs and curves you can draw on the current graphic context to build complex objects. Here we draw some lines and set the line width to 5.
+        ctx.beginPath()
+        ctx.move(to: CGPoint(x: 20.0, y: 20.0))
+        ctx.addLine(to: CGPoint(x: 250.0, y: 100.0))
+        ctx.setLineWidth(5)
+        
+        //3 The path is closed and drawn to the graphics context.
+        ctx.closePath()
+        ctx.strokePath()
+    }
+    
+    func strokeLine() {
+        let path = UIBezierPath()
+        path.lineWidth = 2
+        path.lineCapStyle = CGLineCap.round
+        path.move(to: CGPoint.zero)
+        path.addLine(to: CGPoint.zero)
+        path.stroke()
     }
     
     public override func draw(_ rect: CGRect) {

@@ -12,3 +12,9 @@
 
 /* OK */
 "Accept" = "确定";
+
+/* Cancel */
+"Cancel" = "取消";
+
+/* No detected */
+"noQR" = "没有扫描到二维码";

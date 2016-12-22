@@ -12,3 +12,9 @@
 
 /* OK */
 "Accept" = "OK";
+
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* No code detected */
+"noQR" = "No QR/barcode code is detected";

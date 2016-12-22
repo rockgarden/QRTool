@@ -46,6 +46,7 @@ final class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
         let cb = UIButton()
         cb.translatesAutoresizingMaskIntoConstraints = false
         cb.setTitleColor(.gray, for: .highlighted)
+        cb.backgroundColor = .clear
         return cb
     }()
     
@@ -61,6 +62,16 @@ final class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
         return ttb
     }()
     
+    fileprivate var tipLable: UILabel = {
+        let tl = UILabel()
+        tl.translatesAutoresizingMaskIntoConstraints = false
+        tl.textColor = .white
+        tl.backgroundColor = alphaLightGray
+        tl.textAlignment = .center
+        tl.text = NSLocalizedString("noQR", comment:"No code detected")
+        return tl
+    }()
+    
     func setupComponents(showCancelButton: Bool, showSwitchCameraButton: Bool, showTorchButton: Bool, showOverlayView: Bool) {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,13 +84,15 @@ final class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
         
         guard let cb = cancelButton, let scb = switchCameraButton, let ttb = toggleTorchButton, let ov = overlayView else { return }
         
-        let views = ["cv": cameraView, "ov": ov, "cb": cb, "scb": scb, "ttb": ttb]
+        let views = ["cv": cameraView, "ov": ov, "cb": cb, "scb": scb, "ttb": ttb, "tl": tipLable]
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[cv]|", options: [], metrics: nil, views: views))
         
         if showCancelButton {
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[cv][cb(40)]|", options: [], metrics: nil, views: views))
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[cb]-|", options: [], metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[cv]|", options: [], metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[tl(20)][cb(40)]|", options: [], metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[tl]|", options: [], metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[cb]|", options: [], metrics: nil, views: views)) //-margin
         } else {
             addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[cv]|", options: [], metrics: nil, views: views))
         }
@@ -119,5 +132,7 @@ final class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
         if let cb = cancelButton {
             addSubview(cb)
         }
+        
+        addSubview(tipLable)
     }
 }

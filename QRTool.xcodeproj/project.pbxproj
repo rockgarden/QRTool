@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2C50BD41E0BB99800A459B8 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C50BD31E0BB99800A459B8 /* AppConstant.swift */; };
 		C2D48EE51DFFB734008D4F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48EE41DFFB734008D4F90 /* AppDelegate.swift */; };
 		C2D48EEA1DFFB735008D4F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D48EE81DFFB735008D4F90 /* Main.storyboard */; };
 		C2D48EEC1DFFB735008D4F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D48EEB1DFFB735008D4F90 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		C2887A011E010EDE008D50F4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2C50BD31E0BB99800A459B8 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		C2D48EE11DFFB734008D4F90 /* QRTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D48EE41DFFB734008D4F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D48EE91DFFB735008D4F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C2D48F2D1DFFB8EF008D4F90 /* UI */,
 				C2D48F0B1DFFB7BA008D4F90 /* Sources */,
 				C2D48EE41DFFB734008D4F90 /* AppDelegate.swift */,
+				C2C50BD31E0BB99800A459B8 /* AppConstant.swift */,
 				C2D48F4A1DFFD4F7008D4F90 /* AppFunc.swift */,
 				C2D48EE81DFFB735008D4F90 /* Main.storyboard */,
 				C2D48EEB1DFFB735008D4F90 /* Assets.xcassets */,
@@ -210,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					C2D48EE01DFFB734008D4F90 = {
@@ -287,6 +290,7 @@
 				C2D48F1E1DFFB7BA008D4F90 /* SwitchCameraButton.swift in Sources */,
 				C2D48F191DFFB7BA008D4F90 /* QRCodeReaderViewContainer.swift in Sources */,
 				C2D48F471DFFD06B008D4F90 /* QRCodeMaker.swift in Sources */,
+				C2C50BD41E0BB99800A459B8 /* AppConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +362,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -409,6 +414,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

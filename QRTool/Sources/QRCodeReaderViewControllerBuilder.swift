@@ -42,7 +42,7 @@ public final class QRCodeReaderViewControllerBuilder {
   /**
    The title to use for the cancel button.
    */
-  public var cancelButtonTitle = "Cancel"
+  public var cancelButtonTitle = NSLocalizedString("Cancel", comment:"Cancel")
 
   /**
    The code reader object used to scan the bar code.
