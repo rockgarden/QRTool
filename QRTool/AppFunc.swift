@@ -37,8 +37,8 @@ func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 typealias finishedImage = (_ image:UIImage) -> ()
 
+
 class AppFunc: NSObject {
-    
     /// 单例
     static let shareTool = AppFunc()
     private override init() {}
@@ -122,12 +122,12 @@ class AppFunc: NSObject {
         AudioServicesCreateSystemSoundID(soundUrl, &soundID)
         AudioServicesPlaySystemSound(soundID)
     }
-    
 }
+
 
 //MARK: - Delegate
 extension AppFunc : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[isEditor ? UIImagePickerControllerEditedImage : UIImagePickerControllerOriginalImage] as? UIImage else { return }
         picker.dismiss(animated: true) { [weak self] in
@@ -139,6 +139,19 @@ extension AppFunc : UIImagePickerControllerDelegate, UINavigationControllerDeleg
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+}
+
+func CreateImageWithColor(_ color: UIColor) -> UIImage {
+    let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+    UIGraphicsBeginImageContext(rect.size);
+    let context = UIGraphicsGetCurrentContext()
     
+    context?.setFillColor(color.cgColor)
+    context?.fill(rect)
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return image!
 }
 

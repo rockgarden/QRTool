@@ -46,7 +46,7 @@ final class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
         let cb = UIButton()
         cb.translatesAutoresizingMaskIntoConstraints = false
         cb.setTitleColor(.gray, for: .highlighted)
-        cb.backgroundColor = .clear
+        cb.setBackgroundImage(CreateImageWithColor(alphaLightGray), for: .normal)
         return cb
     }()
     
